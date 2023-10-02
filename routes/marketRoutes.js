@@ -11,5 +11,5 @@ router.post("/",createProduct);
 router.put("/:id",updateProduct);
 router.patch("/:id",updateProduct);
 router.delete("/:id",deleteProduct)
-// TODO: AÑADIR PUT PARA UPDATE BRAND
+
 export default router;

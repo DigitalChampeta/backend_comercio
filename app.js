@@ -20,7 +20,7 @@ try{
 		console.log(`error:' ${error}`)
 	}
 
-//👀 importante este paso para poder parar el servidor dentro de los test
+
 export const server = app.listen(8000,() =>{
 console.log('server is ready  http://localhost:8000/')
 })
