@@ -9,4 +9,3 @@ const ProductsModel = db.define("products", {
 },{
     timestamps: false
 })
-export default ProductsModel;
