@@ -1,16 +1,19 @@
 import express from "express";
 import cors from 'cors'
 import db from "./database/db.js"
-import router from "./routes/marketRoutes.js"
+import productsRouter from "./routes/marketRoutes.js"
+import brandRouter from "./routes/brandRoute.js";
+
 
 export const app = express()
 app.get('/', (_req, res) =>{
- res.send('Hola Api')
+res.send('Hola Api')
 })
 
 app.use(cors())
 app.use(express.json())
-app.use('/products', router);
+app.use('/products', productsRouter);
+app.use('/brands', brandRouter);
 
 
 try{
@@ -21,6 +24,6 @@ try{
 	}
 
 
-export const server = app.listen(8000,() =>{
-console.log('server is ready  http://localhost:8000/')
+export const server = app.listen(0,() =>{
+console.log('server is ready:',server.address().port)
 })

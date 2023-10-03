@@ -5,11 +5,11 @@ import {updateProduct} from "../controllers/marketControllers.js";
 import {deleteProduct} from "../controllers/marketControllers.js";
 
 
-const router = express.Router();
-router.get("/", getAllProducts);
-router.post("/",createProduct);
-router.put("/:id",updateProduct);
-router.patch("/:id",updateProduct);
-router.delete("/:id",deleteProduct)
+const productsRouter = express.Router();
+productsRouter.get("/", getAllProducts);
+productsRouter.post("/",createProduct);
+productsRouter.put("/:id",updateProduct);
+productsRouter.patch("/:id",updateProduct);
+productsRouter.delete("/:id",deleteProduct)
 
-export default router;
+export default productsRouter; 

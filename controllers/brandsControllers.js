@@ -1,4 +1,4 @@
-import BrandsModel from "../models/marketModels.js";
+import BrandsModel from "../models/brandModel.js";
 
 
 //Voy a escribir aquí todas las funciones de los métodos
