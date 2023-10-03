@@ -10,5 +10,3 @@ const ProductsModel = db.define("products", {
     timestamps: false
 })
 export default ProductsModel;
-
-// INTENTAR ANTES CON UN MODELO UNICO (1 TABLA) Y DESPUES CON 2 -3

@@ -1,40 +1,33 @@
-CREATE DATABASE market_app;
-USE market;
+CREATE DATABASE marketApp;
+USE marketApp;
 
-/*CREATE TABLE brands (
-  id int AUTO_INCREMENT PRIMARY KEY,
-  name_brand varchar(50) NOT NULL,
-  description_brand varchar(100)
-);*/
-
-CREATE TABLE products (
-  id int AUTO_INCREMENT PRIMARY KEY,
-  name_product varchar(50) NOT NULL,
-  price float NOT NULL,
-  stock int NOT NULL,
-  brand_name varchar(50) NOT NULL,
-  brands_id int
+CREATE TABLE products(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+product_name VARCHAR (50)NOT NULL,
+stock INT NOT NULL,
+description_product VARCHAR (100) NOT NULL,
+price FLOAT NOT NULL
 );
 
-/*INSERT into products(name_product,price,stock);
-INSERT into brands(name_brand,description_brand)
+INSERT INTO products (product_name, stock, description_product, price)
+VALUES ("Mompox", 10, "Joyería artesanal filigrana", 20);
 
+INSERT INTO products (product_name, stock, description_product, price)
+VALUES ("Mompox Collar", 10, "Joyería artesanal filigrana de oro", 250);
 
-ALTER TABLE products ADD FOREIGN KEY (brands_id) REFERENCES brands (id);
+INSERT INTO products (product_name, stock, description_product, price)
+VALUES ("Mompox Pulsera", 10, "Joyería artesanal filigrana de plata", 80);
 
+USE marketApp;
 
-
-CREATE database books_app;
-USE books_app;
-CREATE TABLE books(
-id int AUTO_INCREMENT, PRIMARY KEY (id),
-title varchar(50) NOT NULL ,
-writer varchar(50) NOT NULL,
-book_description text(300) NOT NULL,
-createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+CREATE TABLE brands(
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name_brand VARCHAR (50)NOT NULL
 );
+SELECT * FROM brands;
 
-INSERT into books(title,writer,book_description)
-VALUES ("100 Años de Soledad", "Gabriel García Márquez", "El mejor libro de la historia"),
-("La Fiesta del Chivo", "Mario Vargas Llosa", "Relato del asesinato");*/
+INSERT INTO brands (name_brand)
+VALUES ("Mompox Jewels");
+
+ALTER TABLE products ADD brand_id INT;
+ALTER TABLE `products` ADD FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`);

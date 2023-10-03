@@ -23,7 +23,6 @@ export const createProduct = async (req, res) => {
 } 
 
 //PUT
-
 export const updateProduct = async (req, res) => {
     try {
         await ProductsModel.update(req.body, {where: {id:req.params.id}} );
@@ -44,7 +43,3 @@ export const deleteProduct = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
-
-// AÑADIR UPDATEBRAND
-
